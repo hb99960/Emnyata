@@ -1,4 +1,4 @@
-import mongoose, { Schema, Document } from "mongoose";
+import mongoose, {Schema, Document} from "mongoose";
 
 export interface IAdmin extends Document {
   username: string;
@@ -8,7 +8,7 @@ export interface IAdmin extends Document {
 const AdminSchema = new Schema<IAdmin>(
   {
     username: { type: String, required: true, unique: true },
-    role: { type: String, enum: ['SuperAdmin', 'Moderator'], required: true },
+    role: { type: String, enum: ['SuperAdmin', 'Admin'], required: true },
   },
   { timestamps: true }
 );

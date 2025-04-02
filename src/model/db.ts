@@ -1,14 +1,17 @@
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
+dotenv.config({ path: `.env` });
 
-const MONGO_URI = process.env.MONGO_URI || '';
-const MONGO_DB = process.env.MONGO_DB || '';
+console.log("MONGODB_URI:", process.env.MONGODB_URI);
+console.log("MONGO_DB_NAME:", process.env.MONGO_DB_NAME);
 
-dotenv.config({ path: `./environments/.env` });
-
-if (!process.env.MONGODB_URI || !process.env.DB_NAME) {
+if (!process.env.MONGODB_URI || !process.env.MONGO_DB_NAME) {
+   
     throw new Error("MONGODB_URI or DB_NAME is missing.");
 }
+
+const MONGO_URI = process.env.MONGODB_URI;
+const MONGO_DB = process.env.MONGO_DB_NAME;
 
 export const connectDB = async() => {
     try{
