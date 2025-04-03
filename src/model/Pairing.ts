@@ -15,7 +15,7 @@ export interface IPairing extends Document {
         endTime: Date;
         slotType: 'Emnyata' | 'Dost';
         status: 'booked' | 'cancelled';
-    }[];
+    };
     question: {
         questionId?: string | null;
         questionName: string | null;

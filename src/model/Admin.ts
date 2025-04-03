@@ -8,7 +8,7 @@ export interface IAdmin extends Document {
 const AdminSchema = new Schema<IAdmin>(
   {
     username: { type: String, required: true, unique: true },
-    role: { type: String, enum: ['SuperAdmin', 'Admin'], required: true },
+    role: { type: String, enum: ['SuperAdmin', 'Admin', 'Mentor'], required: true },
   },
   { timestamps: true }
 );
